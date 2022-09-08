@@ -25,5 +25,15 @@
         - node: machine, worker machine, physical or virtual
         - cluster: set of nodes grouped together
         - master: a node with K8s installed and configured as mster. watches manages other notes
-            - components of master: api server, etcd, kubelet, container runtime, controller, scheduler 
-        - 
+            - components of master: 
+                - api server: front end for clster
+                    - etcd: key value store for cluster, implementing logs
+                    - kubelet: agent running on each node in cluster
+                    - container runtime: underlying software to run containers aka docker
+                    
+                    - controller: brain behind orch, respond when nodes go down
+                    - scheduler: diwstributing worklaods across nodes 
+    - Master vs worker nodes
+        - worker node -> container runtime -> kubelet agent running
+        - master -> api server, etcd, controller manager, scheduler
+    - kutectl - kube control tool used to control mange apps on cluster
